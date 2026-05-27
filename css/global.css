@@ -1,0 +1,435 @@
+/* VARIABLES GLOBALES — Paleta y Tipografía */
+
+html {
+    --color-bg: #F9F5F0;
+    --color-surface: #FFFFFF;
+    --color-border: #E0D8CF;
+
+    --color-primary: #4A7C59;
+    --color-primary-hover: #3A6347;
+    --color-primary-light: #EAF2EC;
+
+    --color-accent: #C0714F;
+    --color-accent-hover: #A85C3C;
+
+    --color-text-main: #2C2C2C;
+    --color-text-muted: #7A7A7A;
+    --color-text-light: #FFFFFF;
+
+    --color-success: #4A7C59;
+    --color-success-bg: #EAF2EC;
+    --color-danger: #C0714F;
+    --color-danger-light: #FAE8E0;
+
+    --color-warning: #B07D2A;
+    --color-warning-bg: #FDF3DC;
+    --color-warning-border: #F5E0A0;
+
+    /* Tipografía */
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Nunito', 'Segoe UI', sans-serif;
+
+    /* Espaciados base */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+
+/* BASE */
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--color-text-main);
+}
+
+p {
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+}
+
+hr {
+    border-color: var(--color-border);
+    opacity: 1;
+}
+
+/* NAVBAR */
+
+#mainNavbar {
+    background-color: var(--color-surface) !important;
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.85rem 1.5rem;
+    font-family: var(--font-body);
+}
+
+#mainNavbar .navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.3px;
+}
+
+#mainNavbar .navbar-brand:hover {
+    color: var(--color-primary-hover);
+}
+
+#mainNavbar .nav-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-sm);
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+#mainNavbar .nav-link:hover {
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+}
+
+#mainNavbar .nav-link.active {
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    font-weight: 700;
+}
+
+/* Botón hamburguesa en mobile */
+#mainNavbar .navbar-toggler {
+    border-color: var(--color-border);
+    padding: 0.3rem 0.6rem;
+}
+
+#mainNavbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.15);
+}
+
+
+/* ENCABEZADO — Feed de productos */
+
+h1 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: var(--color-text-main);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 0.5rem;
+}
+
+
+/* MAIN — Tarjeta del producto */
+
+main.container {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    padding: 2rem;
+}
+
+/* Imagen principal */
+main .img-fluid.border {
+    border-color: var(--color-border) !important;
+    border-radius: var(--radius-md);
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Miniaturas */
+#miniImg .img-fluid {
+    border-color: var(--color-border) !important;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: border-color 0.2s ease, opacity 0.2s ease;
+    opacity: 0.75;
+}
+
+#miniImg .img-fluid:hover {
+    border-color: var(--color-primary) !important;
+    opacity: 1;
+}
+
+/* Título del producto */
+#prodTitle {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    line-height: 1.3;
+}
+
+/* Badge de estado */
+#statusBtn {
+    background-color: var(--color-success-bg);
+    color: var(--color-success);
+    border: 1px solid var(--color-primary-light);
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    pointer-events: none;
+    /* Solo visual, no interactivo */
+}
+
+/* Precio */
+#prodDescription .fs-4 {
+    font-family: var(--font-heading);
+    color: var(--color-text-main);
+    font-size: 1.6rem !important;
+}
+
+/* Descripción corta */
+#prodDescription>p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Botón Mostrar más */
+#fullDescription {
+    border-color: var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#fullDescription:hover {
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    border-color: var(--color-text-muted);
+}
+
+/* Botones de acción */
+#likeBtn {
+    border-color: var(--color-danger);
+    color: var(--color-danger);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#likeBtn:hover {
+    background-color: var(--color-danger-light);
+    color: var(--color-accent-hover);
+}
+
+#changeStatus {
+    border-color: var(--color-border);
+    color: var(--color-text-muted);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#changeStatus:hover {
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    border-color: var(--color-text-muted);
+}
+
+#addCommentBtn {
+    border-color: var(--color-border);
+    color: var(--color-text-muted);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#addCommentBtn:hover {
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    border-color: var(--color-text-muted);
+}
+
+#cartBtn {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-text-light);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+#cartBtn:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+}
+
+
+/* SECCIÓN DE COMENTARIOS */
+
+section.container {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    padding: 1.75rem 2rem;
+}
+
+section h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    letter-spacing: -0.2px;
+}
+
+/* Estado vacío de comentarios */
+#commentsMessage .bi-chat-dots {
+    color: var(--color-border);
+}
+
+#commentsMessage p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* Comentarios insertados por JS */
+#commentSection {
+    font-size: 0.9rem;
+    color: var(--color-text-main);
+}
+
+/* Avatar del formulario */
+section form .bi-person-circle {
+    color: var(--color-border);
+}
+
+/* Input de comentario */
+#commentIpt {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 0.85rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-text-main);
+    background-color: var(--color-bg);
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#commentIpt:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.15);
+}
+
+#commentIpt::placeholder {
+    color: var(--color-border);
+}
+
+/* Botón publicar comentario */
+#postComment {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-text-light);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+#postComment:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+}
+
+
+/* SECCIÓN DE ESTADÍSTICAS */
+
+section.container:last-of-type .row {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg);
+    overflow: hidden;
+}
+
+section.container:last-of-type .col-12 {
+    border-bottom: 1px solid var(--color-border);
+}
+
+section.container:last-of-type .col-12:last-child {
+    border-bottom: none;
+}
+
+/* Divisores verticales en desktop */
+@media (min-width: 768px) {
+    section.container:last-of-type .col-12 {
+        border-bottom: none;
+        border-right: 1px solid var(--color-border);
+    }
+
+    section.container:last-of-type .col-12:last-child {
+        border-right: none;
+    }
+}
+
+section.container:last-of-type .bi {
+    color: var(--color-text-muted);
+}
+
+section.container:last-of-type p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+section.container:last-of-type .fw-bold {
+    font-family: var(--font-heading);
+    font-size: 1.2rem !important;
+    color: var(--color-text-main);
+}
+
+/* Estado "Disponible" en estadísticas */
+section.container:last-of-type .col-12:last-child .fw-bold {
+    color: var(--color-success);
+}
+
+
+/* FOOTER */
+
+#mainFooter {
+    background-color: var(--color-text-main);
+    color: var(--color-text-light);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    text-align: center;
+    margin-top: auto;
+    letter-spacing: 0.2px;
+}
+
+#mainFooter .row {
+    align-items: center;
+    min-height: 3rem;
+}
+
+#mainFooter p {
+    color: var(--color-text-light);
+    opacity: 0.7;
+    margin: 0;
+    font-size: 0.82rem;
+}
+
+/* Media Query: las imágenes en miniatura "desaparecen" en la vista mobile */
+
+@media (width <=480px) {
+    div#miniImg {
+        display: none;
+    }
+}
